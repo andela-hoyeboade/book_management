@@ -41,6 +41,16 @@ INSTALLED_APPS = [
     'rest_framework'
 ]
 
+# Use nose to run all tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+# Tell nose to measure coverage
+NOSE_ARGS = [
+    '--with-coverage',
+    '--cover-erase',
+    '--cover-html',
+]
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
