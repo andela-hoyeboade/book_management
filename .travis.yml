@@ -7,6 +7,5 @@ install:
 
 script:
   - cd book_management && python manage.py test --cover-package=api
-
-after_success:
   - coveralls
+  
