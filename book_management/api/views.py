@@ -31,11 +31,6 @@ class CategoryView(ListCreateAPIView):
             parent_category = get_object_or_404(Category, pk=parent_category)
             serializer.save(parent_category=parent_category)
 
-
-class BookView(ListCreateAPIView):
-    queryset = Book.objects.all()
-    serializer_class = BookSerializer 
-
 class CategoryDetailView(RetrieveUpdateDestroyAPIView):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
@@ -59,3 +54,11 @@ class CategoryBookView(ListCreateAPIView):
     def get_queryset(self):
         category = self.get_category()
         return Book.objects.filter(category=category)
+
+class BookView(ListAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+
+class BookDetailView(RetrieveUpdateDestroyAPIView):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer  

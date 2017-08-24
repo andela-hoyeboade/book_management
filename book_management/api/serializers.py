@@ -10,7 +10,8 @@ class CategorySerializer(serializers.ModelSerializer):
 
 class BookSerializer(serializers.ModelSerializer):
 
+    category = serializers.ReadOnlyField(source='category.id')
     class Meta:
         model = Book
         fields = '__all__'
-        depth = 1
+        depth = 0
