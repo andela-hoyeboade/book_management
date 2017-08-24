@@ -6,9 +6,11 @@ class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
         fields = '__all__'
+        depth = 1
 
 class BookSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Book
         fields = '__all__'
+        depth = 1
