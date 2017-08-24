@@ -3,3 +3,4 @@
 show_missing = True
 omit =
     *models.py*
+    *apps.py*
